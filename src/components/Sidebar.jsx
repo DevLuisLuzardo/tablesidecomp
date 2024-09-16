@@ -2,6 +2,9 @@ import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react"
 import logo from "../assets/logo.png"
 import profile from "../assets/profile.png"
 import { createContext, useContext, useState } from "react"
+import { Link } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa'; // Import the hamburger icon from the FontAwesome library
+
 
 const SidebarContext = createContext();
 
@@ -21,6 +24,7 @@ export default function Sidebar({ children }) {
                     <SidebarContext.Provider value={{ expanded }}>
 
                         <ul className="flex-1 px-3">{children}</ul>
+
                     </SidebarContext.Provider>
 
                     <div className="border-t flex p-3">
@@ -39,15 +43,17 @@ export default function Sidebar({ children }) {
     )
 }
 
-export function SidebarItem({ icon, text, active, alert }) {
+export function SidebarItem({ icon, text, active, alert, componente }) {
     const { expanded } = useContext(SidebarContext)
     return (
+
         <li className={`relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group ${active ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800" : "hover:bg-indigo-50 text-gray-600"}`}>
             {icon}
-            <span className={`overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}`}>{text}</span>
+            <span className={`overflow-hidden transition-all ${expanded ? "w-50 ml-3" : "w-0"}`}>{text}</span>
+            
+
             {alert && (
                 <div className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${expanded ? "" : "top-2"}`}>
-
                 </div>
             )}
 
@@ -56,6 +62,20 @@ export function SidebarItem({ icon, text, active, alert }) {
                     {text}
                 </div>
             )}
+
         </li>
+
+
+
     )
 }
+
+
+function NavSidebarItem({ icon, text, alert, to }) {
+    return (
+        <Link to={to}>
+            <SidebarItem icon={icon} text={text} alert={alert} />
+        </Link>
+    );
+}
+
