@@ -1,5 +1,5 @@
 import Sidebar, { SidebarItem } from "./components/Sidebar"
-import { LayoutDashboard, Home, StickyNote, Layers, Flag, Calendar, LifeBuoy, Settings } from "lucide-react";
+import { Home, Calendar, BookOpenText} from "lucide-react";
 
 import { FaBars, FaDatabase } from 'react-icons/fa'; // Import the hamburger icon from the FontAwesome library
 import { SiFirebase } from "react-icons/si"; // Import the hamburger icon from the FontAwesome library
@@ -38,12 +38,14 @@ function App() {
               
 
               {/* elemento 2 :  */}
-              <li onClick={() => handleComponenteChange('/Calendar')}>
+              <li onClick={() => handleComponenteChange('/BookOpenText')}>
                 <SidebarItem
-                  icon={<Calendar size={20} />}
-                  text="Calendar"
+                  icon={<BookOpenText size={20} />}
+                  text="Devocionales"
                 />
               </li>
+
+
 
 
             </Sidebar>
@@ -57,8 +59,8 @@ function App() {
           
           {/* Contenido dinámico */}
           {activeComponent === '/' && <div>Contenido Inicio</div>}
-          {activeComponent === '/Calendar' && <div><SiFirebase /></div>}
-
+          {activeComponent === '/BookOpenText' && <div>Contenido Devocionales</div>}
+          
 
           {/* Otros componentes : componenteSeleccionado */}
 
