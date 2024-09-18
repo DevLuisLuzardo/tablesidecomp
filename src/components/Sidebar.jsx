@@ -1,4 +1,4 @@
-import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react"
+import { ChevronFirst, ChevronLast, MoreVertical, Menu } from "lucide-react"
 import logo from "../assets/logo.png"
 import profile from "../assets/profile.png"
 import { createContext, useContext, useState } from "react"
@@ -17,7 +17,7 @@ export default function Sidebar({ children }) {
                     <div className="p-4 pb-2 flex justify-between items-center">
                         <img src={logo} className={`overflow-hidden transition-all ${expanded ? "w-30" : "w-0"}`} />
                         <button onClick={() => setExpanded((curr) => !curr)} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100">
-                            {expanded ? <ChevronFirst /> : <ChevronLast />}
+                            {expanded ? <Menu /> : <Menu />}
                         </button>
                     </div>
 
@@ -50,7 +50,7 @@ export function SidebarItem({ icon, text, active, alert, componente }) {
         <li className={`relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group ${active ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800" : "hover:bg-indigo-50 text-gray-600"}`}>
             {icon}
             <span className={`overflow-hidden transition-all ${expanded ? "w-50 ml-3" : "w-0"}`}>{text}</span>
-            
+
 
             {alert && (
                 <div className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${expanded ? "" : "top-2"}`}>
