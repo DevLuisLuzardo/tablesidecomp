@@ -17,7 +17,6 @@ import Devocional from '../public/devocional1.png';
 import Intercesion from '../public/intercesion1.png';
 import Eventos from '../public/eventos1.png';
 import Sedesasocia from '../public/sedesasocia1.png';
-//import Vision from '../public/vision1.png';
 
 
 function App() {

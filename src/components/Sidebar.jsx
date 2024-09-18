@@ -5,6 +5,7 @@ import { createContext, useContext, useState } from "react"
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa'; // Import the hamburger icon from the FontAwesome library
 
+import Menuhamb from '../assets/menuhamb.png'; // Reemplaza 'menuhamb.png' por el nombre de tu archivo
 
 const SidebarContext = createContext();
 
@@ -17,7 +18,10 @@ export default function Sidebar({ children }) {
                     <div className="p-4 pb-2 flex justify-between items-center">
                         <img src={logo} className={`overflow-hidden transition-all ${expanded ? "w-30" : "w-0"}`} />
                         <button onClick={() => setExpanded((curr) => !curr)} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100">
-                            {expanded ? <Menu /> : <Menu />}
+                            {expanded ?
+                                <img src={Menuhamb} alt="Menú" width="30" height="30" /> :
+                                <img src={Menuhamb} alt="Menú" width="30" height="30" />
+                            }
                         </button>
                     </div>
 
@@ -78,4 +82,3 @@ function NavSidebarItem({ icon, text, alert, to }) {
         </Link>
     );
 }
-
