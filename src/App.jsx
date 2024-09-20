@@ -52,19 +52,23 @@ function App() {
         {/* fin. cont. sidebar */}
 
         {/* ini Cont. principal */}
-
-        {/* ini Cont. principal */}
         <div className="content">
           <Routes>
+            <Route
+              path="/"
+              element={
+                //<RequireAuth>
+                <Homepage />
+                //</RequireAuth>
+              }
+            />
             <Route path="/Home" element={<Homepage />} />
             <Route path="/Mision" element={<Mision />} />
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         {/* fin. Cont. principal */}
 
-        {/* fin. Cont. principal */}
       </div>
     </>
   );

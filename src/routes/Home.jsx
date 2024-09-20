@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { UserContext } from "../context/UserProvider";
+
 const Home = () => {
   return (
     <>
-      <h1>INICIO</h1>
+      <h1>HOME PAGE</h1>
     </>
   );
 };
