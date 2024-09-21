@@ -17,8 +17,11 @@ import Misionimg from "../public/mision1.png";
 import NotFound from "./routes/NotFound";
 
 function App() {
+  const [expanded, setExpanded] = useState(false); // Inicializa el estado del sidebar como cerrado
+
   return (
     <>
+      
       {/*</><div className="flex"> */}
       <div className="container m-0">
         {/* contenido sidebar */}
