@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       {/*</><div className="flex"> */}
-      <div className="container">
+      <div className="container m-0">
         {/* contenido sidebar */}
         <div className="sidebar">
           {/* ini. cont. sidebar */}
